@@ -87,7 +87,7 @@
 - --this would represent a single line comment
 
 ### AZURE/SQL script/code example CREATE and ALTER Databases
-
+```SQL
 CREATE DATABASE nathan_db
 
 USE nathan_db

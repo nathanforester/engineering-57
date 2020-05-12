@@ -1,40 +1,40 @@
 # SQL_day2
 
--Auto-increment column will always be unique and is well suited to primary key
--NULL does not equate to nothing, but it does not equate to zero
--It is not an empty string
--SELECT * FROM <table_name> WHERE <column_name> IS NULL not = null
--Update and delete command syntax
+- Auto-increment column will always be unique and is well suited to primary key
+- NULL does not equate to nothing, but it does not equate to zero
+- It is not an empty string
+- SELECT * FROM <table_name> WHERE <column_name> IS NULL not = null
+- Update and delete command syntax
 
 
--Normalisation - removing redundant date or information from the database
--1NF we don't want 2 bits of data in 1 cell - ATOMIC
--NO repeating information (too many null values)
--functional dependency - non key attributes should not be part of the primary key
--2NF composite keys - stored in two columns
--3NF is 2NF except where non key attributes are not dependent on other non key attributes
+- Normalisation - removing redundant date or information from the database
+- 1NF we don't want 2 bits of data in 1 cell - ATOMIC
+- NO repeating information (too many null values)
+- functional dependency - non key attributes should not be part of the primary key
+- 2NF composite keys - stored in two columns
+- 3NF is 2NF except where non key attributes are not dependent on other non key attributes
 
 ### on delete cascade use case
--Allows deletion of the data in the primary key column to be cascaded to its foreign key reference
--This negates the need for manual deletion of data in other tables and keeps the data concurrent
+- Allows deletion of the data in the primary key column to be cascaded to its foreign key reference
+- This negates the need for manual deletion of data in other tables and keeps the data concurrent
 ### Foreign key referencing
--Assigning a foreign key to a column in a given table which references a primary key in another
+- Assigning a foreign key to a column in a given table which references a primary key in another
 ### wild cards examples
--Using the LIKE keyword with %, [charset] or [^charset]
+- Using the LIKE keyword with %, [charset] or [^charset]
 ### SQL operators
--<> or != (not equal to), > greater than, < less than, = equal to, >= greater than or equal to, <= less than or =,
+- <> or != (not equal to), > greater than, < less than, = equal to, >= greater than or equal to, <= less than or =,
 ### BETWEEN - LIKE - AND - IN - NULL - IS NOT NULL - AS - WHERE
--SEE EXAMPLES IN SQL CODE -
--BETWEEN: between one value and another, inclusive of values stipulated
--LIKE: where you need to compare individual characters
--IN: getting the value of two specific attributes, listed individually (not 'SUM')
--AS: prevent raw data being presented from a query, using a custom column title
--WHERE: querying a specific condition
--NULL/NOT NULL: does not equate to zero, but indicates an empty field
+- SEE EXAMPLES IN SQL CODE -
+- BETWEEN: between one value and another, inclusive of values stipulated
+- LIKE: where you need to compare individual characters
+- IN: getting the value of two specific attributes, listed individually (not 'SUM')
+- AS: prevent raw data being presented from a query, using a custom column title
+- WHERE: querying a specific condition
+- NULL/NOT NULL: does not equate to zero, but indicates an empty field
 ### DISTINCT
--Very important in querying the databases where duplicate results are not wanted
+- Very important in querying the databases where duplicate results are not wanted
 ### CONCATENATION
--Combine strings of information from separate fields based on a given database query
+- Combine strings of information from separate fields based on a given database query
 
 ### EXAMPLES OF ALL FOLLOW IN SQL CODE BELOW
 

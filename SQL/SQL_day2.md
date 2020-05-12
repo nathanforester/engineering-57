@@ -1,4 +1,4 @@
-# SQL_day1
+# SQL_day2
 
 -Auto-increment column will always be unique and is well suited to primary key
 -NULL does not equate to nothing, but it does not equate to zero
@@ -38,7 +38,7 @@
 
 ### EXAMPLES OF ALL FOLLOW IN SQL CODE BELOW
 
-```SQL
+-```SQL
 
 CREATE DATABASE nathan_db
 

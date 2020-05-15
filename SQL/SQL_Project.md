@@ -75,3 +75,20 @@ INNER JOIN [Order Details] od ON p.ProductID = od.ProductID
 GROUP BY s.CompanyName
 HAVING SUM(od.UnitPrice*od.Quantity) > 10000
 ORDER BY "Total Sales" DESC
+
+3.3 SELECT TOP 10 c.ContactName, ROUND(SUM(od.UnitPrice*Quantity*(1-Discount)), 2) AS "Total Value of Orders"
+FROM Orders o
+INNER JOIN Customers c ON o.CustomerID = c.CustomerID
+INNER JOIN [Order Details] od ON o.OrderID = od.OrderID
+GROUP BY c.ContactName, o.ShippedDate
+HAVING DATEDIFF(yyyy, o.ShippedDate, GETDATE()) > 23
+ORDER BY "Total Value of Orders" DESC
+
+3.4 SELECT AVG(DATEDIFF(dd, o.OrderDate, o.ShippedDate))
+FROM Orders o
+GROUP BY MONTH(o.ShippedDate), YEAR(o.ShippedDate)
+
+SELECT FORMAT(o.ShippedDate,'MM/yyyy'), AVG(DATEDIFF(dd, o.OrderDate, o.ShippedDate)) AS "Average Days"
+FROM Orders o
+GROUP BY YEAR(o.ShippedDate), MONTH(o.ShippedDate), FORMAT(o.ShippedDate,'MM/yyyy')
+ORDER BY YEAR(o.ShippedDate), MONTH(o.ShippedDate)

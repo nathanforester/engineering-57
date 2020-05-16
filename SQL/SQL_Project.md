@@ -40,7 +40,7 @@ FROM Orders o
 WHERE o.Freight > 100.00 AND (ShipCountry = 'UK' OR ShipCountry = 'USA')
 
 
-1.8SELECT TOP 1 o.OrderID, MAX(o.Discount) AS "Highest Discount",
+1.8 SELECT TOP 1 o.OrderID, MAX(o.Discount) AS "Highest Discount",
 ROUND(SUM(o.UnitPrice*(1-o.Discount) *o.Quantity),2) AS "Discounted Price",
 SUM(o.UnitPrice * o.Quantity)
 FROM [Order Details] o

@@ -37,7 +37,7 @@ HAVING  (SUM(od.UnitPrice * (1-od.Discount) * od.Quantity)) > 1000000
 
 1.7 SELECT  COUNT(o.OrderID) AS "Total Freight"
 FROM Orders o
-WHERE o.Freight > 100.00 AND (ShipCountry = 'UK' OR ShipCountry = 'USA)'
+WHERE o.Freight > 100.00 AND (ShipCountry = 'UK' OR ShipCountry = 'USA')
 
 
 1.8SELECT TOP 1 o.OrderID, MAX(o.Discount) AS "Highest Discount",
@@ -65,7 +65,7 @@ VALUES (
 );
 
 
-3.1 SELECT e.FirstName + ' ' + e.LastName, e. ReportsTo
+3.1 SELECT e.FirstName + ' ' + e.LastName, e.ReportsTo
 FROM Employees e
 
 3.2 ROUND(SUM(od.UnitPrice*(1-od.Discount)*od.Quantity),2) AS "Total Sales"

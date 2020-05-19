@@ -68,18 +68,18 @@ VALUES (
 3.1 SELECT e.FirstName + ' ' + e.LastName, e.ReportsTo
 FROM Employees e
 
-3.2 ROUND(SUM(od.UnitPrice*(1-od.Discount)*od.Quantity),2) AS "Total Sales"
-FROM Products p
+3.2 SELECT ROUND(SUM(od.UnitPrice*(1-od.Discount)*od.Quantity),2) AS "Total Sales"
+FROM [Order Details] od
 INNER JOIN Suppliers s ON p.SupplierID = s.SupplierID
-INNER JOIN [Order Details] od ON p.ProductID = od.ProductID
+INNER JOIN Products p ON p.ProductID = od.ProductID
 GROUP BY s.CompanyName
 HAVING SUM(od.UnitPrice*od.Quantity) > 10000
 ORDER BY "Total Sales" DESC
 
 3.3 SELECT TOP 10 c.ContactName, ROUND(SUM(od.UnitPrice*Quantity*(1-Discount)), 2) AS "Total Value of Orders"
 FROM Orders o
-INNER JOIN Customers c ON o.CustomerID = c.CustomerID
-INNER JOIN [Order Details] od ON o.OrderID = od.OrderID
+INNER JOIN Customers c ON c.CustomerID = o.CustomerID
+INNER JOIN [Order Details] od ON od.OrderID = o.OrderID
 GROUP BY c.ContactName, o.ShippedDate
 HAVING DATEDIFF(yyyy, o.ShippedDate, GETDATE()) > 23
 ORDER BY "Total Value of Orders" DESC
